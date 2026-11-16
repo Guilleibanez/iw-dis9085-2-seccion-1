@@ -47,11 +47,16 @@ Me gustaría tomar esta forma de **contar la historia del emprendimiento** para 
 ## Avance del proyecto — Diseño y prototipado en Figma
 **16 de Noviembre de 2026**
 
-Después de definir los referentes y la idea general de la página, comencé a trabajar en las primeras maquetas de Figma. Organicé el archivo en tres páginas: baja fidelidad, UI Kit y alta fidelidad, para ir desarrollando el proyecto por etapas y no mezclar todos los elementos.
+Después de definir los referentes y la idea general de la página, comencé a trabajar en las primeras maquetas de Figma. Organicé el archivo en tres páginas: UI Kit, alta fidelidad desktop y alta fidelidad mobile, para ir desarrollando el proyecto por etapas y no mezclar todos los elementos.
 
 Primero trabajé la estructura en baja fidelidad, definiendo dónde irían las imágenes, textos, botones y las distintas secciones de la página. Quería que la web no fuera solamente un catálogo, sino que también mostrara un poco de la historia de Paper Design y explicara cómo funciona el proceso de personalización y compra.
 
+![Baja fidelidad](assets/bajafidelidad.png)
+
 Luego comencé a desarrollar el UI Kit utilizando los colores del logotipo, la tipografía Inter, íconos y diferentes estilos de botones. Fui probando distintas combinaciones, pero finalmente mantuve los colores principales de la marca (fucsia, amarillo y turquesa), acompañados de tonalidades pastel y espacios blancos para que la página no se viera tan saturada.
+
+![UI Kit](assets/uikit.png)
+
 
 Con esta base avancé al prototipo de alta fidelidad, donde actualmente tengo desarrolladas tres vistas principales: **Página Principal, Catálogo Completo y Vista de producto**, todas en formato MacBook Pro de 16 pulgadas.
 
@@ -61,25 +66,151 @@ En un comienzo dejé recuadros vacíos para las imágenes, pero posteriormente f
 
 Al avanzar con el diseño, también comencé a utilizar guías y columnas para ordenar los elementos, especialmente en las tarjetas del catálogo y en las secciones que combinan imágenes con textos. Esto me ayudó a mantener una mejor alineación y distribuir los espacios de manera más consistente.
 
+![Guías prototipo](assets/guiasprototipo.png)
+
+
+
 ### Algunas dificultades durante el proceso
 
 Cuando comencé a probar las interacciones en Figma me di cuenta de que había varias cosas que no sabía cómo configurar.
 
-Por ejemplo, quería que los botones cambiaran de apariencia cuando el usuario pasara el cursor sobre ellos. Una de las primeras dudas que tuve fue:
+Por ejemplo, quería que los botones cambiaran de apariencia cuando el usuario pasara el cursor sobre ellos.
 
-> ¿Cómo hago para que el botón "Explorar catálogo" cambie a un segundo estado al pasar el ratón sobre él?
+Para esto comencé a trabajar con variantes, creando diferentes estados para un mismo botón. También quise aplicar un efecto similar a las fotografías del catálogo, haciendo que aumentaran ligeramente de tamaño al pasar el cursor sobre ellas, no sabía bien como hacerlo y le consulté a la IA:
 
-Para esto comencé a trabajar con variantes, creando diferentes estados para un mismo botón. También quise aplicar un efecto similar a las fotografías del catálogo, haciendo que aumentaran ligeramente de tamaño al pasar el cursor sobre ellas.
+> ¿Cómo hago para que al pasar el ratón por sobre la imagen esta tenga un efecto donde crece un poco su tamaño?
 
-Otra de las cosas que intenté desarrollar fue el buscador de la barra superior. Mi idea era que, al hacer clic sobre la lupa, apareciera un recuadro donde escribir lo que se quiere buscar.
+```
+¡SÍÍÍ, te entendí perfecto! Lo que quieres se llama Zoom on Hover, un efecto donde la imagen aumenta ligeramente de tamaño cuando pasas el cursor sobre ella y vuelve suavemente a su tamaño original cuando lo retiras.
 
-Sin embargo, tuve problemas al intentar incorporar ese recuadro como parte de la tercera variante de la lupa. Al principio no lograba que quedara dentro del componente y tuve que revisar varias veces cómo estaban organizados los frames y las capas.
+Es ideal para las tarjetas de productos del catálogo de Paper Design, porque les dará un aspecto más interactivo y profesional.
+Cómo hacerlo en Figma, paso a paso
+1. Crea dos estados de tu imagen
+En tu página 02 - UI Kit:
+1. Selecciona la imagen de tu producto.
+2. Presiona Ctrl + Alt + K para convertirla en componente, si todavía no lo es.
+3. En el panel derecho, selecciona Añadir variante (Add variant).
+4. Tendrás dos variantes del mismo componente.
+
+
+Default
+Imagen al 100%
+
+Hover
+Imagen al 105–108%
+
+
+2. Agranda ligeramente la imagen de la segunda variante
+- Variante 1 — Default: mantén la imagen en su tamaño original.
+- Variante 2 — Hover: agranda únicamente la fotografía un 5–8%, manteniendo sus proporciones y su posición centrada.
+Para lograr que la imagen crezca sin modificar las dimensiones de la tarjeta, colócala dentro de un Frame con tamaño fijo y activa Clip content (Recortar contenido).
+3. Configura la interacción
+Selecciona la variante Default, entra a Prototipo y crea una interacción hacia la variante Hover.
+Interacción
+Figma
+
+ActivadorAl pasar el ratón
+
+AcciónCambiar a → Hover
+
+AnimaciónSmart Animate
+
+CurvaEase out
+
+Duración250 ms
+
+
+4. Prueba el efecto
+Pasa el cursor sobre este ejemplo para visualizar el tipo de movimiento que buscamos:
+
+
+¡Ojo con algo de tu captura! 
+Veo que en el menú Acción, la opción Cambiar a aparece deshabilitada.
+
+Esto suele ocurrir cuando no tienes dos variantes correctamente creadas dentro del mismo conjunto de componentes o estás seleccionando una instancia en vez de una variante principal.
+
+Lo importante para tu catálogo: haz el efecto solo sobre la fotografía. No agrandes toda la tarjeta, porque también crecerían los textos, precios y botones.
+
+Una vez que tengas el componente con sus dos estados funcionando, puedes utilizar instancias en tu página de alta fidelidad y repetir el mismo efecto en las imágenes de chapitas, adhesivos y demás productos. 
+
+```
+
+![Componentes](assets/componenteimagenes.png)
+
+## Configuración utilizada para las interacciones:
+
+![Configuración](assets/configuracioninteraccion.png)
 
 También aparecieron dificultades cuando comencé a visualizar el diseño en modo prototipo. Algunos elementos no se mostraban como esperaba y tuve que prestar más atención al orden de las capas, ya que no siempre se comportaban de la misma manera que dentro del editor.
 
 Otro problema fue intentar mantener fija la barra de navegación mientras se hace scroll por la página.
 
 > ¿Cómo puedo mantener la barra superior fija mientras se recorre la página?
+
+```
+¡Súper fácil!  Para que la barra superior de **Paper Design** (logo, navegación, íconos y fondo rosado) permanezca visible mientras bajas por la página, debes configurarla como **Fixed (posición fija)** en Figma.
+
+Paso a paso en tu archivo
+
+1. Agrupa toda la barra de navegación
+
+En tu página `03 - Alta fidelidad`:
+
+1. Selecciona el rectángulo rosado de fondo, el logo, los textos del menú y los íconos.
+2. Presiona `Ctrl + G` para agruparlos.
+3. Renombra el grupo como `HEADER - Navegación`.
+4. Comprueba que esté dentro del Frame `Página Principal`, que aparece en tu panel izquierdo.
+
+2. Configura su posición fija
+
+Selecciona `HEADER - Navegación`.
+
+En el panel derecho, abre *Prototipo* (junto a Diseño).
+
+Busca la sección *Scroll behavior (Comportamiento de desplazamiento)* y cambia:
+
+Scroll behavior
+
+Position
+
+*Fixed*
+
+La barra permanece en su posición al desplazarte.
+
+3. Activa el scroll vertica
+
+Selecciona el Frame principal `Página Principal`, no el grupo del header.
+
+En el panel "Prototipo", configura:
+
+Scroll behavior
+
+Frame principal
+
+Overflow
+
+Vertical
+
+El Frame debe tener contenido que exceda su altura visible para que el desplazamiento funcione.&#x20;
+
+
+4. Comprueba el resultado
+
+Abre el modo presentación con el botón  de la esquina superior derecha.
+
+Al desplazarte hacia abajo debería ocurrir lo siguiente:
+
+- El header rosado permanece arriba.
+- El logo de Paper Design sigue visible.
+- Los enlaces Inicio, Catálogo, Historia, Empresas y Cómo comprar se mantienen en su sitio.
+- El resto de la página se desplaza por detrás.
+
+Importante: si tu Frame tiene Auto Layout, Figma puede requerir que configures el header con posición absoluta para utilizar `Fixed`.
+
+```
+![Barra figma](assets/barrafigma.png)
+
+---
 
 Aunque parecía algo bastante simple, me costó encontrar la configuración correcta. Esto me hizo revisar la estructura del frame principal y cómo estaban agrupados los elementos del encabezado.
 
@@ -89,17 +220,11 @@ En general, varias de estas dificultades surgieron porque inicialmente estaba m�
 
 ### Estado actual del proyecto
 
+![Visualización Figma](assets/visualizacionfigma.png)
+
 Actualmente tengo bastante avanzada la propuesta visual de escritorio. La página principal ya incorpora las distintas secciones del emprendimiento, el catálogo completo reúne una mayor variedad de productos y la vista individual permite visualizar opciones de personalización, como tipos de papel, medidas y cantidades.
 
 También he ido ajustando la distribución de los elementos y las fotografías, procurando que las tres vistas mantengan una misma identidad visual.
-
-Todavía me falta terminar de revisar algunas interacciones, corregir conexiones entre pantallas y comprobar que el desplazamiento y la barra de navegación funcionen como quiero.
-
-Además, debo desarrollar la **versión mobile**, adaptando las secciones y componentes al formato iPhone 16, ya que hasta ahora me he concentrado principalmente en la versión de escritorio.
-
-Este proceso me ha servido para entender que diseñar una interfaz no es solamente organizar elementos visualmente. Hay muchos detalles que recién aparecen al momento de probar el prototipo, especialmente relacionados con las variantes, las capas y la navegación.
-
-He tenido que probar varias veces algunas soluciones y volver a organizar elementos que pensaba que ya estaban terminados, pero siento que eso también ha sido parte importante del aprendizaje.
 
 Por ahora estoy conforme con cómo ha ido tomando forma la página, porque cada vez se parece más a lo que imaginaba para Paper Design. Mi siguiente paso es terminar de ajustar el prototipo, avanzar con la versión mobile y trabajar con la estructura de HTML y CSS.
 
