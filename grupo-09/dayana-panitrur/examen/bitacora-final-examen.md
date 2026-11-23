@@ -1,3 +1,4 @@
+[prueba para ver si la bitácora se está subiendo]
 # Bitácora entrega de Examen — Portafolio
 
 Este es el sitio web de mi portafolio diseñado en Figma y programado en HTML, CSS y JavaScript.
@@ -128,7 +129,6 @@ Diseño de Interfaces Web · Escuela de Diseño UDP · 2026.
 
 ## 5. Aprendizajes
 
-- [Revisar y escribir con tus palabras. Ideas a partir de lo que pasó en el proyecto:]
 - **Diseñar pensando en el código:** los frames sin Auto Layout no se pueden copiar de Dev Mode, porque entregan posiciones fijas. Lo que sí sirve directo son los colores, las tipografías, los gaps y los paddings.
 - **Encimar sin `position`:** se puede con flexbox, márgenes negativos y `transform`, y entendí cómo funciona el orden de capas (`z-index`) en los elementos flex.
 - **Convertir medidas:** todo lo de Figma lo pasé a `rem` (dividiendo los px por 16), y usé `%` para que el sitio se adapte al ancho de la pantalla.
