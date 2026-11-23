@@ -1,6 +1,8 @@
 # Renata Arévalo Urra Paper Design - Bitácora de proyecto Examen
 
-LINK FIGMA: https://www.figma.com/design/kMhjW5vmicuQDVx1cX9iJS/Examen---Dise%C3%B1o-de-Interfaces-web?node-id=1-3
+Prototipo Figma: https://www.figma.com/design/kMhjW5vmicuQDVx1cX9iJS/Examen---Dise%C3%B1o-de-Interfaces-web?node-id=1-3
+
+GitHub Pages: https://arevalourra.github.io/paper-design/
 
 ## Descripción general del proyecto
 
