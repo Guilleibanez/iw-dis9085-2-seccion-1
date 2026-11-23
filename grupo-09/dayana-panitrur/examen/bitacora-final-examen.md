@@ -1,4 +1,3 @@
-[prueba para ver si la bitácora se está subiendo]
 # Bitácora entrega de Examen — Portafolio
 
 Este es el sitio web de mi portafolio diseñado en Figma y programado en HTML, CSS y JavaScript.
