@@ -10,7 +10,7 @@
 
 ---
 
-## Portafolio 
+## **Portafolio**
 
 En mi portafolio verás los trabajos que he hecho durante la carrera de Diseño Industrial y, a través de ellos, cuento cómo he ido creciendo como diseñadora.
 
@@ -237,4 +237,5 @@ Crear un portafolio que tenga mi esencia fue más difícil de lo que pensé. No 
 Lo más complicado fue pensar en cómo me iban a ver los demás. Quería que quien entrara pudiera conocer quién soy y viera a una persona confiable, capaz de lograr buenas cosas. Eso es aún más difícil, porque en cierta parte no es fácil creerse el cuento de que eres buena en lo que haces. Mostrar mis proyectos, contar cómo los hice y poner mi nombre en ellos me obligó a mirar mi trabajo con otros ojos y a reconocer lo que he logrado.
 
 Al final, el portafolio también terminó siendo un ejercicio personal. Me ayudó a ordenar lo que he hecho, a entender hacia dónde quiero ir y a confiar un poco más en lo que sé hacer.
+
 
